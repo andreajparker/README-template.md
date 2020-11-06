@@ -44,7 +44,7 @@ Add run commands and examples you think users will find useful. Provide an optio
 
 ## Output
 
-<project_names>'s output is sent to <database>/<S3 bucket>/<other data location> and is used by <downstream_application> to <predict_something>.
+<project_names>'s output is sent to `<database>/<S3 bucket>/<other data location>` and is used by `<downstream_application>` to `<predict_something>`.
 
 ## Logging, Monitoring and Alerting
 
