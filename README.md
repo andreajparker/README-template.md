@@ -59,6 +59,6 @@ Currently <project_name>'s predictions and logs are sent to <database> and <moni
 - datetime when the prediction was generated 
 that allows them to be tracked and filtered.
 
-Monitors for <project_name>'s are setup in [Datadog](https://app.datadoghq.com/this_is_a_fake_link). An alert is sent via Slack if an <project_name> <action> fails.
+Monitors for <project_name> are setup in [Datadog](https://app.datadoghq.com/this_is_a_fake_link). An alert is sent via Slack if an <project_name> <action> fails.
 
 See the [Confluence page](https://link.to.confluence.page) for details on <project_name>'s monitoring and alerting.
