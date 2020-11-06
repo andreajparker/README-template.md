@@ -42,3 +42,23 @@ To use <project_name>, follow these steps:
 
 Add run commands and examples you think users will find useful. Provide an options reference for bonus points!
 
+## Output
+
+<project_names>'s output is sent to <database>/<S3 bucket>/<other data location> and is used by <downstream_application> to <predict_something>.
+
+## Logging, Monitoring and Alerting
+
+<project_name>'s logging messages are designed to make it easier:
+- for engineers to debug
+- for ops team to determine the issue and decide if engineering resource is needed
+
+Currently <project_name>'s predictions and logs are sent to <database> and <monitoring tool> with the following values:
+- file id
+- model predicted value
+- model version name
+- datetime when the prediction was generated 
+that allows them to be tracked and filtered.
+
+Monitors for <project_name>'s are setup in [Datadog](https://app.datadoghq.com/this_is_a_fake_link). An alert is sent via Slack if an <project_name> <action> fails.
+
+See the [Confluence page](https://link.to.confluence.page) for details on <project_name>'s monitoring and alerting.
