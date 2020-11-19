@@ -29,6 +29,9 @@ Before you begin, ensure you have met the following requirements:
 ## Using <project_name>
 
 To use <project_name>, follow these steps:
+1. **Train** on your data
+2. **Build/Rebuild** your image (run `.docker/build_image.sh` to rebuild the image)
+3. **Deploy** the kubectl apply -f .docker/pod.yaml 
 
 ### Training
 Talk about training: where is <project_name> trained? What data is used for training and how do you access that data? If you need to preprocess the data before it goes into the model link to any relevant preprocessing documentation (scripts, Confluence pages, etc.) here.
