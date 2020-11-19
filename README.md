@@ -5,7 +5,7 @@
 ![GitHub contributors](https://img.shields.io/github/contributors/scottydocs/README-template.md)
 ![Jenkins](https://jenkins-badges.readthedocs.io/en/latest/_images/coverage_green.svg)
 
-(Add other [coverage](https://shields.io/category/coverage), [build](https://shields.io/category/build), or [monitorin](https://shields.io/category/monitoring) badges if applicable to this project.)
+(Add other [coverage](https://shields.io/category/coverage), [build](https://shields.io/category/build), or [monitoring](https://shields.io/category/monitoring) badges if applicable to this project.)
 
 Project name is a `<utility/tool/feature>` that allows `<insert_target_audience>` to do `<action/task_it_does>`.
 
