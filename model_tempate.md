@@ -17,13 +17,16 @@ Additional line of information text about what the project does. Your introducti
 * __Model Version__: v0.1.8
 * __Production Model Endpoint__: `https://ambassador.someurl.com/seldon/seldon-system/your-model/api/v0.1/predictions`
 * __Development Model Endpoint__: `https://dev-ambassador.someurl.com/seldon/seldon-system/your-model/api/v0.1/predictions`
+* __Throughput Considerations__: `batch_size`
+
+See **Model Input** and **Model Output** sections below for model in- and output.
 
 ## Prerequisites
 
 Before you begin, ensure you have met the following requirements:
 <!--- These are just example requirements. Add, duplicate or remove as required --->
 * You have installed the latest version of `<coding_language/dependency/requirement>`
-* You have a `<Windows/Linux/Mac>` machine. State which OS is supported/which is not.
+* You have permissions for `<serviceX/IAM_role/database_read-only_account>`
 * You have read `<guide/link/documentation_related_to_project>`.
 
 ## Using <project_name>
@@ -34,44 +37,49 @@ To use <project_name>, follow these steps:
 3. **Deploy** - one or two setences about the deployment process
 
 ### Training
-Talk about training: where is <project_name> trained? What data is used for training and how do you access that data? If you need to preprocess the data before it goes into the model link to any relevant preprocessing documentation (scripts, Confluence pages, etc.) here.
 
-### Requirements for training
-See **Prerequisites**
+Include a few sentences about training your model here: where is <project_name> trained? What data is used for training and how does one access that data? 
 
-### Retraining <project_name>
-<!--- These are just example requirements. Add or remove as required --->
+Include a few sentences about preprocessing the data (if applicable); include links to any relevant preprocessing documentation (scripts, Confluence pages, etc.) if someone needs context to understand why the data was preprocessed. What was done and why? What wasn't done?
 
-To change the code or data:
+### Building
 
-1. Run `.docker/build_image.sh` to rebuild the image
-2. Deploy the pod with `kubectl apply -f .docker/pod.yaml`
+Talk about building your model here in a few sentences.
+ - If Rest API / Seldon: What steps (if any) does a user need to take to build the model?
+ - If Lambda: Talk about creating a Lambda handler, initial setup using the`tf-environment`, etc.
+ - If Queue (SQS) service: Talk about the Terragrunt configuration including IAM policy, SQS queue, SNS topic, etc.
+
+## Deployment
+Talk about deploying your model here in a few sentences.
+ - If Seldon: talk about deploying the model to the EKS cluster and any relevant links ArgoCD and Helm resources.
+ - If Lambda: Jenkins pipeline will automatically deploy the main branch in the model repo, but add anything else you think might be useful here.
+ - If Queue (SQS) service: 
 
 ## Model input
 
 Include a few sentences about what goes into your <project_name>/model.
 
 ```
-<usage_example_1>
-```
-
-```
 {
   "file_id": "FILE_ID_STRING",
-  "regex_pred": "REGEX_PREDICTION_STRING"
+  "regex_pred": "REGEX_PREDICTION_STRING",
+  ...
 }
 ```
 
-Add commands and examples you think users will find useful. 
+<project_name>'s input takes in `file_id` as as string, `regex_pred` as a string, and so on.
 
-## <project_name> Output
+Provide a definition if the input data names are unclear, e.g., `regex_pred` is the carrier predicted by the regex heuristic.
+
+## Model Output
 
 <project_name>'s output includes `predicted_value`, as a string, and the confidence score of the prediction as a float. The allowed `predicted_value`s are defined in the `PREDICTED_VALUES` in `configuration.py`.
 
 ```
 {
   "predicted_value": "PREDICTED_VALUE_STRING",
-  "predicted_score": pred_score_float
+  "predicted_score": pred_score_float,
+  ...
 }
 ````
 
@@ -93,4 +101,4 @@ that allows them to be tracked and filtered.
 
 Monitors for <project_name> are setup in [Datadog](https://app.datadoghq.com/this_is_a_fake_link). An alert is sent via Slack if an <project_name> <action> fails.
 
-See the [Confluence page](https://link.to.confluence.page) for details on <project_name>'s monitoring and alerting.
+See the [<project_name> Monitoring - Confluence page](https://link.to.confluence.page) for details on <project_name>'s monitoring and alerting.
