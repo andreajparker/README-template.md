@@ -47,13 +47,13 @@ Include a few sentences about preprocessing the data (if applicable); include li
 Talk about building your model here in a few sentences.
  - If Rest API / Seldon: What steps (if any) does a user need to take to build the model?
  - If Lambda: Talk about creating a Lambda handler, initial setup using the`tf-environment`, etc.
- - If Queue (SQS) service: Talk about the Terragrunt configuration including IAM policy, SQS queue, SNS topic, etc.
+ - If Queue (SQS) service: Talk about the Terraform boilerplate including IAM policy, SQS queue, SNS topic, etc.
 
 ## Deployment
 Talk about deploying your model here in a few sentences.
  - If Seldon: talk about deploying the model to the EKS cluster and any relevant links ArgoCD and Helm resources.
  - If Lambda: Jenkins pipeline will automatically deploy the main branch in the model repo, but add anything else you think might be useful here.
- - If Queue (SQS) service: 
+ - If Queue (SQS) service: Talk about Helm, EKS, and anything else you think might be useful here.
 
 ## Model input
 
