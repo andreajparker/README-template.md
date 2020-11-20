@@ -21,7 +21,7 @@ Additional line of information text about what the project does. Your introducti
 
 See **Model Input** and **Model Output** sections below for model input and output.
 
-## Prerequisites
+# Prerequisites
 
 Before you begin, ensure you have met the following requirements:
 <!--- These are just example requirements. Add, duplicate or remove as required --->
@@ -29,20 +29,22 @@ Before you begin, ensure you have met the following requirements:
 * You have permissions for `<service/IAM_role/database>`
 * You have read `<guide/link/documentation_related_to_project>`
 
-## Using <project_name>
+# Using <project_name>
 
 To use <project_name>, follow these steps:
 1. **Train** - one or two sentences about training process
 2. **Build** - one or two sentences about build process
 3. **Deploy** - one or two setences about the deployment process
 
-### Training
+# Training, building and deploying
+
+## Training
 
 Include a few sentences about training your model here: where is <project_name> trained? What data is used for training and how does one access that data? For training the model, what was done and why? What _wasn't_ done? / What are some limitations of the current model?
 
 Include a few sentences about preprocessing the data (if applicable); include links to any relevant preprocessing documentation (repos/scripts, Notebooks, Confluence pages, etc.).
 
-### Building
+## Building
 
 Talk about building your model here in a few sentences.
  - If Rest API / Seldon: What steps (if any) does a user need to take to build the model? Jenkins should build the model-serving Docker image and push it to ECR.
@@ -54,6 +56,8 @@ Talk about deploying your model here in a few sentences.
  - If Seldon: talk about deploying the model to the EKS cluster and any relevant links ArgoCD and Helm resources.
  - If Lambda: Jenkins pipeline will automatically deploy the main branch in the model repo, but add anything else you think might be useful here.
  - If Queue (SQS) service: talk about Helm charts and anything else you think might be useful here.
+
+# Model Inputs and Outputs
 
 ## Model input
 
@@ -88,7 +92,7 @@ Provide a definition for any field names in the input data that are unclear, e.g
 Provide a definition for any field names in the output data that are unclear.
 
 
-## Logging, Monitoring and Alerting
+# Logging, Monitoring and Alerting
 
 <project_name>'s logging messages are designed to make it easier:
 - for engineers to debug
