@@ -19,15 +19,15 @@ Additional line of information text about what the project does. Your introducti
 * __Development Model Endpoint__: `https://dev-ambassador.someurl.com/seldon/seldon-system/your-model/api/v0.1/predictions`
 * __Throughput Considerations__: `batch_size`
 
-See **Model Input** and **Model Output** sections below for model in- and output.
+See **Model Input** and **Model Output** sections below for model input and output.
 
 ## Prerequisites
 
 Before you begin, ensure you have met the following requirements:
 <!--- These are just example requirements. Add, duplicate or remove as required --->
 * You have installed the latest version of `<coding_language/dependency/requirement>`
-* You have permissions for `<serviceX/IAM_role/database_read-only_account>`
-* You have read `<guide/link/documentation_related_to_project>`.
+* You have permissions for `<service/IAM_role/database>`
+* You have read `<guide/link/documentation_related_to_project>`
 
 ## Using <project_name>
 
@@ -38,22 +38,22 @@ To use <project_name>, follow these steps:
 
 ### Training
 
-Include a few sentences about training your model here: where is <project_name> trained? What data is used for training and how does one access that data? 
+Include a few sentences about training your model here: where is <project_name> trained? What data is used for training and how does one access that data? For training the model, what was done and why? What _wasn't_ done? / What are some limitations of the current model?
 
-Include a few sentences about preprocessing the data (if applicable); include links to any relevant preprocessing documentation (scripts, Confluence pages, etc.) if someone needs context to understand why the data was preprocessed. What was done and why? What wasn't done?
+Include a few sentences about preprocessing the data (if applicable); include links to any relevant preprocessing documentation (repos/scripts, Notebooks, Confluence pages, etc.).
 
 ### Building
 
 Talk about building your model here in a few sentences.
- - If Rest API / Seldon: What steps (if any) does a user need to take to build the model?
- - If Lambda: Talk about creating a Lambda handler, initial setup using the`tf-environment`, etc.
- - If Queue (SQS) service: Talk about the Terraform boilerplate including IAM policy, SQS queue, SNS topic, etc.
+ - If Rest API / Seldon: What steps (if any) does a user need to take to build the model? Jenkins should build the model-serving Docker image and push it to ECR.
+ - If Lambda: talk about any relevant details here such as the Lambda function handler, tf-environment including any aditional resources such as IAM, SNS, etc.
+ - If Queue (SQS) service: talk about the SQS queue messages (the input to the ML model), the predictions (SNS), and anything else you think might be useful.
 
 ## Deployment
 Talk about deploying your model here in a few sentences.
  - If Seldon: talk about deploying the model to the EKS cluster and any relevant links ArgoCD and Helm resources.
  - If Lambda: Jenkins pipeline will automatically deploy the main branch in the model repo, but add anything else you think might be useful here.
- - If Queue (SQS) service: Talk about Helm, EKS, and anything else you think might be useful here.
+ - If Queue (SQS) service: talk about Helm charts and anything else you think might be useful here.
 
 ## Model input
 
@@ -69,7 +69,7 @@ Include a few sentences about what goes into your <project_name>/model.
 
 <project_name>'s input takes in `file_id` as as string, `regex_pred` as a string, and so on.
 
-Provide a definition if the input data names are unclear, e.g., `regex_pred` is the carrier predicted by the regex heuristic.
+Provide a definition for any field names in the input data that are unclear, e.g., `regex_pred` is the carrier predicted by the regex heuristic.
 
 ## Model Output
 
@@ -84,6 +84,9 @@ Provide a definition if the input data names are unclear, e.g., `regex_pred` is 
 ````
 
 <project_name>'s output is sent to `<database>/<S3 bucket>/<other data location>` and is used by `<downstream_application>` to `<predict_something>`
+
+Provide a definition for any field names in the output data that are unclear.
+
 
 ## Logging, Monitoring and Alerting
 
